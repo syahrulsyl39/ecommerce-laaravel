@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ProductController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('backend.layout.index');
 });
+
+// product
+Route::get('product', [ProductController::class, 'show'])->name('show');
+Route::get('product/plus', [ProductController::class, 'create'])->name('create');
+Route::post('plus', [ProductController::class, 'store'])->name('store');
 
 Auth::routes();
 
