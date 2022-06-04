@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <a href="{{ route('create-p') }}" class="btn btn-primary">Tambah</a>
+    <a href="{{ route('create-o') }}" class="btn btn-primary">Tambah</a>
 </div>
 <table class="table mt-3">
     <thead>
@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ( $products as $key => $item )
+        {{-- @foreach ( $products as $key => $item )
         <tr>
             <th scope="row">{{ $key+1 }}</th>
             <td>{{ $item->product_code }}</td>
@@ -28,8 +28,8 @@
             <td>{{ $item->stock }}</td>
             <td>{{ $item->price }}</td>
             <td>
-                <a href="{{ route('edit-p', $item->id) }}" class="btn btn-primary">Edit</a>
-                <form style="display: inline" action="{{ route('destroy-p', $item->id) }}" method="POST">
+                <a href="{{ route('edit', $item->id) }}" class="btn btn-primary">Edit</a>
+                <form style="display: inline" action="{{ route('destroy', $item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger">Hapus</button>
@@ -37,7 +37,7 @@
             </td>
         </tr>
         <tr>
-        @endforeach
+        @endforeach --}}
 </table>
 
 @endsection

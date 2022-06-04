@@ -22,7 +22,7 @@
 
     <!-- Heading -->
     <li class="nav-item active">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="{{ route('show-p') }}">
         <i class="fas fa-fw fa-database"></i>
         <span>Produk</span></a>
     </li>
@@ -30,9 +30,25 @@
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item active">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="{{ route('show-o') }}">
         <i class="fas fa-fw fa-download"></i>
         <span>Pesanan</span></a>
+    </li>
+
+    <hr class="sidebar-divider my-0">
+
+    <li class="nav-item active">
+      <a class="nav-link" href="{{ route('show-c') }}">
+        <i class="fas fa-fw  fa-th-list"></i>
+        <span>Categori</span></a>
+    </li>
+
+    <hr class="sidebar-divider my-0">
+
+    <li class="nav-item active">
+      <a class="nav-link" href="">
+        <i class="fas fa-fw fa-phone"></i>
+        <span>Contact</span></a>
     </li>
 
     <hr class="sidebar-divider my-0">

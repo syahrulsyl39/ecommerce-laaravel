@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -20,9 +22,22 @@ Route::get('/', function () {
 });
 
 // product
-Route::get('product', [ProductController::class, 'show'])->name('show');
-Route::get('product/plus', [ProductController::class, 'create'])->name('create');
-Route::post('plus', [ProductController::class, 'store'])->name('store');
+Route::get('product', [ProductController::class, 'show'])->name('show-p');
+Route::get('product/plus', [ProductController::class, 'create'])->name('create-p');
+Route::get('product/plus/{id}', [ProductController::class, 'edit'])->name('edit-p');
+Route::put('product/plus/{id}', [ProductController::class, 'update'])->name('update-p');
+Route::delete('product/plus/{id}', [ProductController::class, 'destroy'])->name('destroy-p');
+Route::post('plus', [ProductController::class, 'store'])->name('store-p');
+
+// category
+Route::get('category', [CategoryController::class, 'show'])->name('show-c');
+Route::get('category/plus', [CategoryController::class, 'create'])->name('create-c');
+Route::post('category', [CategoryController::class, 'store'])->name('store-c');
+
+// order
+Route::get('order', [OrderController::class, 'show'])->name('show-o');
+Route::get('order/plus', [OrderController::class, 'create'])->name('create-o');
+Route::post('order', [OrderController::class, 'store'])->name('store-o');
 
 Auth::routes();
 
