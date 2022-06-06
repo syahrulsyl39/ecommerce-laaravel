@@ -34,6 +34,8 @@ Route::post('plus', [ProductController::class, 'store'])->name('store-p');
 Route::get('contact', [ContactController::class, 'show'])->name('show-contact');
 Route::get('contact/plus', [ContactController::class, 'create'])->name('create-contact');
 Route::get('contact/plus/{id}', [ContactController::class, 'edit'])->name('edit-contact');
+Route::put('contact/plus/{id}', [ContactController::class, 'update'])->name('update-contact');
+Route::delete('contact/plus/{id}', [ContactController::class, 'destroy'])->name('destroy-contact');
 Route::post('contact', [ContactController::class, 'store'])->name('store-contact');
 
 // category

@@ -43,4 +43,32 @@ class ContactController extends Controller
 
         return view('backend.contact.update', compact('contacts'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|string',
+            'email' => 'required|string',
+            'message' => 'required|string',
+        ]);
+
+        $contacts = Contact::where('id', $id)->first();
+
+        Contact::create([
+            "name" => $request->input('name'),
+            "email" => $request->input('email'),
+            "message" => $request->input('message'),
+        ]);
+
+        return redirect()->route('show-contact');
+    }
+
+    public function destroy($id)
+    {
+        $contacts = Contact::where('id', $id)->first();
+
+        $contacts->delete();
+
+        return redirect()->route('show-contact');
+    }
 }

@@ -21,7 +21,7 @@
             <td>{{ $item->message }}</td>
             <td>
                 <a href="{{ route('edit-contact', $item->id) }}" class="btn btn-primary">Edit</a>
-                <form style="display: inline" action="" method="POST">
+                <form style="display: inline" action="{{ route('destroy-contact', $item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger">Hapus</button>
