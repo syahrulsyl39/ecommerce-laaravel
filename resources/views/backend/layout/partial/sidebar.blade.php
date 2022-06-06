@@ -46,7 +46,7 @@
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item active">
-      <a class="nav-link" href="">
+      <a class="nav-link" href="{{ route('show-contact') }}">
         <i class="fas fa-fw fa-phone"></i>
         <span>Contact</span></a>
     </li>

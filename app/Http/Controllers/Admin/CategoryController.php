@@ -29,6 +29,38 @@ class CategoryController extends Controller
     public function show()
     {
         $categories = Category::all();
+
         return view('backend.categori.index', compact('categories'));
+    }
+
+    public function edit($id)
+    {
+        $categories = Category::where('id', $id)->first();
+
+        return view('backend.categori.update', compact('categories'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|string',
+        ]);
+
+        $categories = Category::where('id', $id)->first();
+
+        $categories->update([
+            "name" => $request->input('name'),
+        ]);
+
+        return redirect()->route('show-c');
+    }
+
+    public function destroy($id)
+    {
+        $categories = Category::where('id', $id)->first();
+
+        $categories->delete();
+
+        return redirect()->route('show-c');
     }
 }

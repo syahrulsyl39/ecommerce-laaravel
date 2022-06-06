@@ -1,8 +1,9 @@
 @extends('backend.layout.index')
 
 @section('content')
-<form action="{{ route('store-c') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('update-c', $categories->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
     <div class="form-group">
         <label for="floatingInput">Nama</label>
         <input type="text" class="form-control @error('name') is-invalid @enderror" id="floatingInput"

@@ -31,7 +31,7 @@ class ProductController extends Controller
             "stock" => $request->input('stock'),
             "price" => $request->input('price'),
         ]);
-        return redirect()->route('show');
+        return redirect()->route('show-p');
     }
 
     public function show()
@@ -69,7 +69,7 @@ class ProductController extends Controller
             "price" => $request->input('price'),
         ]);
 
-        return redirect()->route('show');
+        return redirect()->route('show-p');
     }
 
     public function destroy($id)
@@ -78,6 +78,6 @@ class ProductController extends Controller
 
         $products->delete();
 
-        return redirect()->route('show');
+        return redirect()->route('show-p');
     }
 }
