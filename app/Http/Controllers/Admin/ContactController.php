@@ -54,7 +54,7 @@ class ContactController extends Controller
 
         $contacts = Contact::where('id', $id)->first();
 
-        Contact::create([
+        $contacts->update([
             "name" => $request->input('name'),
             "email" => $request->input('email'),
             "message" => $request->input('message'),
